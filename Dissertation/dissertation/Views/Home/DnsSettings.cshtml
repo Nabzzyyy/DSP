@@ -1,0 +1,82 @@
+﻿@model IEnumerable<dissertation.Models.SettingStruct>
+
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @Styles.Render("~/Content/Main.css")
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+        <header>
+            <nav class="secondary_header" id="menu">
+                <ul>
+                    <li>@Html.ActionLink("Homepage", "Homepage")</li>
+                    <li>@Html.ActionLink("Download Client", "DownloadClient")</li>
+                    <li>@Html.ActionLink("Block Website", "DnsSettings")</li>
+                    <li>@Html.ActionLink("Time On Screen", "TosSettings")</li>
+                    <li>@Html.ActionLink("GPS", "GPS")</li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <div>
+                <h3 class="overview_title">DNS Settings</h3>
+            </div>
+
+            <div class="DnsInfo">
+                <p>
+                    This allows the parent/guardian to block any website that thet feel is inappopriate or unnecessary for the child to gain access.<br />
+                    For example: select the dropbox to choose "Family friendly" and this prevent access to non-family friendly websites.
+                </p>
+            </div>
+
+            <div class="webSettings">
+                <form id="SelectClient">
+                    <label for="ChooseClient">Select Client:</label>
+                    <select name="RestrictedClient" id="Client">
+                        <option>Select option...</option>
+                        @foreach (var client in Model)
+                        {
+                            <option value="@client.Name" id="SelectedClient">@client.Name</option>
+                        }
+                    </select>
+                </form>
+
+                <br />
+
+                <form id="BlockDns">
+                    <label for="Block_website">DNS:</label>
+                    <select name="Dns" id="Dns">
+                        <option>Select option...</option>
+                        <option value="1" id="FamilyFriendly">Family-friendly</option>
+                        <option value="2" id="NoRestrictions">None</option>
+
+                    </select>
+                    <button id="update-dns">Apply</button>
+                </form>
+
+                <p id="SubmitInstruction">
+                    Click the "Apply" button to set and save the settings.
+                </p>
+            </div>
+        </section>
+
+</body>
+</html>
+
+<style>
+    .overview_title, .webSettings {
+        color: #717070 !important;
+        text-align: center;
+    }
+
+    .DnsInfo {
+        text-align: center;
+    }
+</style>

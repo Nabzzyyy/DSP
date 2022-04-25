@@ -1,0 +1,51 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KidzProtection</title>
+    @Styles.Render("~/Content/Main.css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="primary_header">
+                <h1 class="title"> KidzProtection</h1>
+                <button class="logout_button">@Html.ActionLink("Logout", "Logout")</button>
+            </div>
+                @RenderBody()
+        </header>
+        <div>
+            <br><br><br><br>
+            <br><br><br><br>
+            <br><br><br><br>
+            <br><br><br><br>
+            <br><br><br><br>
+            <br><br><br><br>
+        </div>
+    </div>
+    <footer class="secondary_header footer">
+        <div class="copyright">&copy;2022 - <strong>KidzProtection</strong><br><strong>Dissertation Project</strong><br><strong>Mohammed Nabeel Yousaf</strong></div>
+    </footer>
+</body>
+</html>
+
+
+<script>
+    function urls() {
+        this.RetrieveClientInformation = "@Url.Action("RetrieveClientInformation", "Home")";
+        this.RetrieveClientSettings = "@Url.Action("RetrieveClientSettings", "Home")";
+        this.RetrieveClientTosSettings = "@Url.Action("RetrieveClientTosSettings", "Home")";
+        this.UpdateDns = "@Url.Action("UpdateDns", "Home")"; 
+        this.Software = "@Url.Action("Software", "Home")";
+    }
+
+</script>
+
+
+@Scripts.Render("~/Scripts/jquery-3.6.0.js")
+@Scripts.Render("~/Scripts/AJAX.js")
+@RenderSection("JavaScript", required: false)

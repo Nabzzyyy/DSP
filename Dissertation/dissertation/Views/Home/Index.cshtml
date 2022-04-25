@@ -1,0 +1,74 @@
+﻿@{
+    Layout = null;
+}
+
+<!doctype html>
+
+<html>
+<head>
+    @Styles.Render("~/Content/Main.css")
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KidzProtection</title>
+    <link href="Main.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="primary_header">
+                <h1 class="title"> KidzProtection</h1>
+                <button class="login_button">@Html.ActionLink("Login", "Login")</button>
+                
+            </div>
+        </header>
+        <section>
+            <h2 class="noDisplay">Main Content</h2>
+            <article class="left_article">
+                <h3>About US&nbsp;</h3>
+                <p>Hello, my name is Mohammed Nabeel Yousaf and this is KidzProtection!</p>
+                <p>
+                    KidzProtection is my dissertation project that is designed to keep your children safe online in multiple ways.
+                    From blocking inappopriate messages from being sent or recieved to blocking websites that you believe as the parent/guardian are not suitable for you children.<br> So why use KidzProtection? <br>Well its simple! KidzProtection alerts the parent/guardian when a violation occurs and they can confirm if the violation is correct because a screenshot would be provided with the alert, allowing the alert to be reviewed unlike other parental software.
+                    <br> All you have to do to begin is simply create an account and login to download the software and monitor your children's safety online.
+                </p>
+            </article>
+            <aside class="right_article"><img src="..\Images\Profile.png" alt="" width="auto" height="50" class="placeholder" /> </aside>
+        </section>
+        <div class="row">
+            <div class="columns">
+                <p class="thumbnail_align"> <img src="..\Images\BlockWebsite.png" alt="" class="thumbnail" /> </p>
+                <h4>Blocking Sites</h4>
+                <p>
+                    KidzSafety is designed to monitor children on the internet and with the restrictions you personally can introduce,
+                    your children can not access any inappropriate sites that isn’t suited for them and much more because if your children tried to
+                    access then this would cause a violation which the adult would be notified.
+                </p>
+            </div>
+            <div class="columns">
+                <p class="thumbnail_align"> <img src="..\Images\Price.png" alt="" class="thumbnail" /> </p>
+                <h4>Free</h4>
+                <p> A software that allows young children on their computer to be safe from the harsh side of the internet. KidzSafety is a software that has a simple process to install on your children device(s). The software only cost (CHANGEABLE -> £14.99) which is cheaper compared to other parental software.</p>
+            </div>
+            <div class="columns">
+                <p class="thumbnail_align"> <img src="..\Images\Texting.png" alt="" class="thumbnail" /> </p>
+                <h4>Monitoring messages</h4>
+                <p>
+                    KidzSafety takes it further by monitoring the text messages from your children’s computer by using keystrokes which any inappropriate sent messages can be detected.
+                    All these violation(s) that occurs would also be provided with screenshot(s) for evidence that the violation occurred which the adult can approve or disapprove of the violation(s).
+                </p>
+            </div>
+            <div class="columns">
+                <p class="thumbnail_align"> <img src="..\Images\downbload.png" alt="" class="thumbnail" /> </p>
+                <h4>Simple to download & install</h4>
+                <p>Simply go to the download page and click the download using your child's PC. Once downloaded then click on the file for it to run and there you go! You are all set to monitor your child's behaviour online.</p>
+            </div>
+        </div>
+        <footer class="secondary_header footer">
+            <div class="copyright">&copy;2022 - <strong>KidzProtection</strong><br><strong>Dissertation Project</strong><br><strong>Mohammed Nabeel Yousaf</strong></div>
+        </footer>
+    </div>
+</body>
+</html>
+

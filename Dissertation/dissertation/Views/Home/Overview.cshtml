@@ -1,0 +1,77 @@
+﻿@model IEnumerable<dissertation.Models.ClientStruct>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @Styles.Render("~/Content/Main.css")
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+        <header>
+            <nav class="secondary_header" id="menu">
+                <ul>
+                    <li>@Html.ActionLink("Homepage", "Homepage")</li>
+                    <li>@Html.ActionLink("Download Client", "DownloadClient")</li>
+                    <li>@Html.ActionLink("Block Website", "DnsSettings")</li>
+                    <li>@Html.ActionLink("Time On Screen", "TosSettings")</li>
+                    <li>@Html.ActionLink("GPS", "GPS")</li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <div>
+                <h3 class="overview_title">Overview</h3>
+            </div>
+            <div>
+                <form id="ChooseClient">
+                    <label for="ChooseClient">Select Client:</label>
+                    <select name="RestrictedClient" id="Client" onchange="UpdateTable()">
+                        <option>Select option...</option>
+                        @foreach (var client in Model)
+                        {
+                            <option value="@client.Name" id="SelectedClient">@client.Name</option>
+                        }
+                    </select>
+                </form>
+
+                <table id="client_table">
+                    <tr>
+                        <th>Client Name</th>
+                        <th>OS</th>
+                        <th>Current IP</th>
+                        <th>Violation</th>
+                        <th>Screenshot</th>
+                        <th>Time of Violation</th>
+                    </tr>
+
+                    @foreach (var client in Model)
+                    {
+                        <tr>
+                            <td id="clientNameRow">@client.Name</td>
+                            <td id="OSRow">@client.OS</td>
+                            <td id="CurrentIpRow">@client.CurrentIP</td>
+                            <td id="KeywordRow">@client.Keyword</td>
+                            <td id="ScreenshotRow"><img src="data:image/png;base64,@client.Screenshot" width="auto" height="500px"/></td>
+                            <td id="AlertTimeRow">@client.AlertTime.ToString("dd/MM/yyyy HH:mm:ss")</td>
+
+                        </tr>
+                    }
+                </table>
+            </div>
+        </section>
+</body>
+</html>
+
+<style>
+    .overview_title {
+        color: #717070 !important;
+        text-align: center;
+    }
+</style>

@@ -1,0 +1,78 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KidzProtection </title>
+    @Styles.Render("~/Content/Main.css")
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+        <header>
+            <nav class="secondary_header" id="menu">
+                <ul>
+                    <li>@Html.ActionLink("Homepage", "Homepage")</li>
+                    <li>@Html.ActionLink("Download Client", "DownloadClient")</li>
+                    <li>@Html.ActionLink("Overview", "Overview")</li>
+                    <li>@Html.ActionLink("Analytical Report", "AnalyticalReport")</li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <div>
+                <h3 class="download_title">Download Client</h3>
+            </div>
+            <div>
+                <p id="download_text"><b>First enter the child's name into the field then click the blue "Download" button to begin downloading the software.</b></p>
+            </div>
+            <div>
+                <form class="client_label">
+                    <label for="client_name">Please enter child's name:</label><br>
+                    <input type="text" id="client_name" name="client_name" value=""><br>
+                </form>
+            </div>
+            <br /><br /><br />
+            <div id="DownloadSoftware">
+                <button type="submit" class="download-btn" onclick="DownloadSoftware()">Download</button>
+            </div>
+        </section>
+</body>
+</html>
+
+<style>
+    .download_title {
+        color: #717070 !important;
+        text-align: center;
+    }
+
+    #download_text {
+        text-align: center;
+    }
+
+    .download-btn {
+        position: absolute;
+        left: 45%;
+        background-color: DodgerBlue;
+        border: none;
+        color: white;
+        padding: 12px 30px;
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+    .btn:hover {
+            background-color: RoyalBlue;
+    }
+
+    .client_label{
+        position:absolute;
+        left:45%;
+    }
+</style>

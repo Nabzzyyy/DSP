@@ -1,0 +1,79 @@
+﻿body {
+    background-color:#0094ff;
+}
+
+#background {
+    background-color: #717070;
+}
+
+#Title {
+    top: 18%;
+    position:absolute;
+    left: 42%;
+    font-size: 30px;
+}
+
+.form-group1 {
+    top:30%;
+    position:absolute;
+    left:40%;
+}
+
+.form-group2 {
+    top: 35%;
+    position: absolute;
+    left: 40%;
+}
+
+.form-group3 {
+    top: 40%;
+    position: absolute;
+    left: 40%;
+}
+
+.form-group4 {
+    top: 45%;
+    position: absolute;
+    left: 40%;
+}
+
+.form-group5 {
+    top: 50%;
+    position: absolute;
+    left: 40%;
+}
+
+.form-group6 {
+    top: 60%;
+    position: absolute;
+    left: 40%;
+}
+
+.login-button {
+    top: 45%;
+    position: absolute;
+    left: 40%;
+}
+#Register-button {
+    top: 45%;
+    position: absolute;
+    left: 46%;
+}
+#return-button {
+    top: 50%;
+    position: absolute;
+    left: 40%;
+}
+
+#ReturnToLogin {
+    top: 60%;
+    position: absolute;
+    left: 50%;
+}
+
+#return-button2 {
+    top: 65%;
+    position: absolute;
+    left: 40%;
+}
+

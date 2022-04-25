@@ -1,0 +1,146 @@
+﻿@model IEnumerable<dissertation.Models.SettingStruct>
+
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @Styles.Render("~/Content/Main.css")
+    @Styles.Render("~/Content/Tos.css")
+    @Styles.Render("~/Content/nouislider.css")
+    @Styles.Render("~/Content/nouislider.min.css")
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <header>
+        <nav class="secondary_header" id="menu">
+            <ul>
+                <li>@Html.ActionLink("Homepage", "Homepage")</li>
+                <li>@Html.ActionLink("Download Client", "DownloadClient")</li>
+                <li>@Html.ActionLink("Block Website", "DnsSettings")</li>
+                <li>@Html.ActionLink("Time On Screen", "TosSettings")</li>
+                <li>@Html.ActionLink("GPS", "GPS")</li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div>
+            <h3 class="TosSettings_title">Time on Screen</h3>
+        </div>
+        <div class="clientSelection">
+            <form id="SelectClient">
+                <label for="ChooseClient">Select Client:</label>
+                <select name="RestrictedClient" id="Client">
+                    <option>Select option...</option>
+                    @foreach (var client in Model)
+                    {
+                        <option value="@client.Name" id="SelectedClient">@client.Name</option>
+                    }
+                </select>
+            </form>
+        </div>
+        
+        <div class="TosSettings">
+            <div class="monday-tos">
+                <div id="time-range">
+                    <p id="monday-text">
+                        Monday Time Range: <span class="slider-time">12:00 AM</span> - <span class="slider-time2">11:59 PM</span>
+                    </p>
+                    <div class="sliders_step1">
+                        <div id="slider-range"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+           
+        <div class="tuesday-tos">
+            <div id="time-range">
+                <p id="tuesday-text">
+                    Tuesday Time Range: <span class="slider-time3">12:00 AM</span> - <span class="slider-time4">11:59 PM</span>
+
+                </p>
+                <div class="sliders_step1">
+                    <div id="slider-range2"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wednesday-tos">
+            <div id="time-range">
+                <p id="wednesday-text">
+                    Wednesday Time Range: <span class="slider-time5">12:00 AM</span> - <span class="slider-time6">11:59 PM</span>
+                </p>
+                <div class="sliders_step1">
+                    <div id="slider-range3"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="thursday-tos">
+            <div id="time-range">
+                <p id="thursday-text">
+                    Thursday Time Range: <span class="slider-time7">12:00 AM</span> - <span class="slider-time8">11:59 PM</span>
+                </p>
+                <div class="sliders_step1">
+                    <div id="slider-range4"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="friday-tos">
+            <div id="time-range">
+                <p id="friday-text">
+                    Friday Time Range: <span class="slider-time9">12:00 AM</span> - <span class="slider-time10">11:59 PM</span>
+                </p>
+                <div class="sliders_step1">
+                    <div id="slider-range5"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="saturday-tos">
+            <div id="time-range">
+                <p id="saturday-text">
+                    Saturday Time Range: <span class="slider-time11">12:00 AM</span> - <span class="slider-time12">11:59 PM</span>
+                </p>
+                <div class="sliders_step1">
+                    <div id="slider-range6"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sunday-tos">
+            <div id="time-range">
+                <p id="sunday-text">
+                    Sunday Time Range: <span class="slider-time13">12:00 AM</span> - <span class="slider-time14">11:59 PM</span>
+                </p>
+                <div class="sliders_step1">
+                    <div id="slider-range7"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tos-button">
+            <button id="update-tos">Apply</button>
+            <br>
+        </div>
+</section>
+    <div>
+        <br /><br /><br />
+        <br /><br /><br />
+        <br /><br /><br />
+        <br /><br /><br />
+    </div>
+</body>
+</html>
+
+@section JavaScript {
+    @Scripts.Render("~/Scripts/nouislider.js")
+    @Scripts.Render("~/Scripts/nouislider.min.js")
+    @Scripts.Render("~/Scripts/ToS.js")
+}
+
